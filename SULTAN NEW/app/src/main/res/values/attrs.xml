@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="CirclePageIndicatorStyle" format="reference" />
+    </declare-styleable>
+    <attr name="centered" format="boolean" />
+    <attr name="selectedColor" format="color" />
+    <attr name="strokeWidth" format="dimension" />
+    <attr name="unselectedColor" format="color" />
+    <declare-styleable name="CirclePageIndicator">
+        <attr name="centered" />
+        <attr name="fillColor" format="color" />
+        <attr name="pageColor" format="color" />
+        <attr name="android:orientation" />
+        <attr name="radius" format="dimension" />
+        <attr name="snap" format="boolean" />
+        <attr name="strokeColor" format="color" />
+        <attr name="strokeWidth" />
+        <attr name="android:background" />
+    </declare-styleable>
+
+    <declare-styleable name="FontCustom">
+        <attr name="fontModel">
+            <enum name="openSansBold" value="1" />
+            <enum name="openSansBoldItalic" value="2" />
+            <enum name="openSansExtraBold" value="3" />
+            <enum name="openSansExtraBoldItalic" value="4" />
+            <enum name="openSansItalic" value="5" />
+            <enum name="openSansLight" value="6" />
+            <enum name="openSansLightItalic" value="7" />
+            <enum name="openSansRegular" value="8" />
+            <enum name="openSansSemiBold" value="9" />
+            <enum name="openSansSemiBoldItalic" value="10" />
+        </attr>
+
+        <attr name="fontType">
+            <enum name="Bold" value="1" />
+            <enum name="Italic" value="2" />
+            <enum name="Normal" value="3" />
+            <enum name="Bold_Italic" value="4" />
+        </attr>
+    </declare-styleable>
+</resources>

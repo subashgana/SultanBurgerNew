@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent_30"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_10">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/navigation_view_height"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.sultanburger.view.textview.TextViewCustom
+                android:id="@+id/addons_textView_categoryName"
+                style="@style/TextView_SubHeading"
+                android:layout_width="match_parent"
+                android:background="@color/windowBackground"
+                android:padding="@dimen/padding_5"
+                app:fontModel="openSansRegular" />
+
+            <LinearLayout
+                android:id="@+id/addons_linearLayout_addonsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@color/windowBackground"
+                android:orientation="vertical">
+
+                <com.sultanburger.view.textview.TextViewCustom
+                    style="@style/TextView_SubHeading"
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/padding_3"
+                    android:text="@string/addons_additional_comments"
+                    app:fontModel="openSansRegular" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:background="@color/colorAccent_40" />
+
+                <com.sultanburger.view.edittext.EditTextCustom
+                    android:id="@+id/accountInfo_editText_name"
+                    style="@style/EditTextStroke"
+                    android:layout_margin="@dimen/margin_10"
+                    android:hint="@string/addons_enter_your_comments"
+                    android:inputType="text"
+                    app:fontModel="openSansRegular" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.sultanburger.view.button.ButtonCustom
+        android:id="@+id/addons_button_done"
+        style="@style/ButtonRed"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/margin_15"
+        android:text="@string/addons_done"
+        app:fontModel="openSansRegular" />
+</RelativeLayout>

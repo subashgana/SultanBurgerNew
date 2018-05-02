@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/alert_list_item_textView"
+        style="@style/TextView_SubHeading"
+        android:layout_width="match_parent"
+        android:maxLines="5"
+        android:padding="@dimen/padding_10"
+        android:singleLine="false"
+        android:textColor="@color/colorAccent_80" />
+</LinearLayout>

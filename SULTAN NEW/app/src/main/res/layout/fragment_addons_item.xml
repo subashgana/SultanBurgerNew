@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/windowBackground"
+        android:orientation="vertical">
+
+        <com.sultanburger.view.textview.TextViewCustom
+            android:id="@+id/addonsContainer_item_textView_categoryName"
+            style="@style/TextView_SubHeading"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/margin_3"
+            android:gravity="center"
+            android:padding="@dimen/padding_3"
+            app:fontModel="openSansRegular" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_marginTop="@dimen/margin_5"
+            android:background="@color/colorAccent_40" />
+
+        <LinearLayout
+            android:id="@+id/addonsContainer_item_switchContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+</LinearLayout>

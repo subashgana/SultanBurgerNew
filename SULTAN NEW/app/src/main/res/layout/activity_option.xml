@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.sultanburger.view.textview.TextViewCustom
+            android:id="@+id/option_textView_welcome"
+            style="@style/TextView_Headline"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="false"
+            android:text="@string/home_welcome_back_sarwar"
+            app:fontModel="openSansRegular" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_logo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_30">
+
+        <com.sultanburger.view.textview.TextViewCustom
+            style="@style/TextView_SubHeading"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="false"
+            android:text="@string/home_order_with_minimum_amount_35_sar_n_for_home_delivery"
+            android:textColor="@color/light_text_primary"
+            app:fontModel="openSansRegular" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_30"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.sultanburger.view.button.ButtonCustom
+                android:id="@+id/option_button_pickUp"
+                style="@style/ButtonRed"
+                android:layout_weight="1"
+                android:text="@string/home_pick_up"
+                app:fontModel="openSansRegular" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <com.sultanburger.view.button.ButtonCustom
+                android:id="@+id/option_button_delivery"
+                style="@style/ButtonRed"
+                android:layout_weight="1"
+                android:text="@string/home_delivery"
+                app:fontModel="openSansRegular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/option_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="1dp"
+                android:background="@color/windowBackground" />
+
+            <com.sultanburger.view.textview.TextViewCustom
+                android:id="@+id/option_textView_or"
+                style="@style/TextView_Title"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_15"
+                android:text="@string/home_or"
+                android:textColor="@color/white"
+                app:fontModel="openSansSemiBold" />
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="1dp"
+                android:background="@color/windowBackground" />
+        </LinearLayout>
+
+        <com.sultanburger.view.button.ButtonCustom
+            android:id="@+id/option_button_reOrder"
+            style="@style/ButtonYellow"
+            android:text="@string/home_re_order"
+            app:fontModel="openSansRegular" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,64 @@
+<resources>
+
+    <dimen name="corner">0dp</dimen>
+    <dimen name="corner_3">3dp</dimen>
+    <dimen name="corner_5">5dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="padding_3">3dp</dimen>
+    <dimen name="padding_5">5dp</dimen>
+    <dimen name="padding_7">7dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_15">15dp</dimen>
+    <dimen name="padding_20">20dp</dimen>
+    <dimen name="padding_25">25dp</dimen>
+    <dimen name="padding_30">30dp</dimen>
+    <dimen name="padding_35">35dp</dimen>
+    <dimen name="padding_40">40dp</dimen>
+    <dimen name="padding_45">45dp</dimen>
+    <dimen name="padding_50">50dp</dimen>
+
+    <!-- Margin -->
+    <dimen name="margin_3">3dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_15">15dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_25">25dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+    <dimen name="margin_35">35dp</dimen>
+    <dimen name="margin_40">40dp</dimen>
+    <dimen name="margin_45">45dp</dimen>
+    <dimen name="margin_50">50dp</dimen>
+
+    <!-- Navigation View -->
+    <dimen name="navigation_view_elevation">5dp</dimen>
+    <dimen name="navigation_view_shadow_height">1.5dp</dimen>
+    <dimen name="navigation_view_shadow_height_without_colored_background">1.5dp</dimen>
+    <dimen name="navigation_view_min_width">104dp</dimen>
+    <dimen name="navigation_view_max_width">168dp</dimen>
+    <dimen name="navigation_view_height">56dp</dimen>
+    <dimen name="navigation_view_line_width">1dp</dimen>
+    <dimen name="navigation_view_icon">24dp</dimen>
+    <dimen name="navigation_view_padding_top_active">5dp</dimen>
+    <dimen name="navigation_view_padding_top_inactive">9dp</dimen>
+    <dimen name="navigation_view_padding_top_inactive_without_text">16dp</dimen>
+    <dimen name="navigation_view_padding_bottom">7dp</dimen>
+    <dimen name="navigation_view_padding_left">12dp</dimen>
+    <dimen name="navigation_view_padding_right">12dp</dimen>
+    <dimen name="navigation_view_text_size_active">14sp</dimen>
+    <dimen name="navigation_view_text_size_inactive">12sp</dimen>
+
+
+    <dimen name="profile_height">75dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="leftmargin">30dp</dimen>
+    <dimen name="smalltext">15sp</dimen>
+    <dimen name="normaltext">17.5sp</dimen>
+    <dimen name="expandableicon">600dp</dimen>
+    <dimen name="expandable">900dp</dimen>
+    <dimen name="navtitle">90dp</dimen>
+
+    <dimen name="account_option_height">150dp</dimen>
+
+</resources>

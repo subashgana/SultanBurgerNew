@@ -1,0 +1,54 @@
+package com.sultanburger.helper.imagecache;
+
+import android.support.v7.widget.RecyclerView;
+
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.sultanburger.utils.Validator;
+
+public class PauseOnScrollListener extends RecyclerView.OnScrollListener {
+
+    private ImageLoader imageLoader;
+
+    private final boolean pauseOnScroll;
+    private final boolean pauseOnSettling;
+    private final RecyclerView.OnScrollListener externalListener;
+
+    public PauseOnScrollListener(ImageLoader imageLoader, boolean pauseOnScroll, boolean pauseOnSettling) {
+        this(imageLoader, pauseOnScroll, pauseOnSettling, null);
+    }
+
+    public PauseOnScrollListener(ImageLoader imageLoader, boolean pauseOnScroll, boolean pauseOnSettling, RecyclerView.OnScrollListener customListener) {
+        this.imageLoader = imageLoader;
+        this.pauseOnScroll = pauseOnScroll;
+        this.pauseOnSettling = pauseOnSettling;
+        this.externalListener = customListener;
+    }
+
+    @Override
+    public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+        switch (newState) {
+            case RecyclerView.SCROLL_STATE_IDLE:
+                imageLoader.resume();
+                break;
+
+            case RecyclerView.SCROLL_STATE_DRAGGING:
+                if (pauseOnScroll)
+                    imageLoader.pause();
+                break;
+
+            case RecyclerView.SCROLL_STATE_SETTLING:
+                if (pauseOnSettling)
+                    imageLoader.pause();
+                break;
+        }
+
+        if (Validator.isValid(externalListener))
+            externalListener.onScrollStateChanged(recyclerView, newState);
+    }
+
+    @Override
+    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+        if (Validator.isValid(externalListener))
+            externalListener.onScrolled(recyclerView, dx, dy);
+    }
+}

@@ -1,0 +1,131 @@
+<resources>
+    <string name="app_name">Sultan Delight Burger</string>
+
+    <!-- Menu -->
+    <string name="menu_notification">Notification</string>
+
+    <!-- Activity Options -->
+    <string name="home_welcome_back_sarwar">Welcome back sarwar</string>
+    <string name="home_order_with_minimum_amount_35_sar_n_for_home_delivery">Order with minimum amount 35 SAR\nfor Home Delivery</string>
+    <string name="home_pick_up">PICK UP</string>
+    <string name="home_delivery">DELIVERY</string>
+    <string name="home_or">OR</string>
+    <string name="home_re_order">RE ORDER</string>
+
+    <!-- Activity SignIn -->
+    <string name="sign_in_mobile_number_email">Mobile number / e-mail</string>
+    <string name="sign_in_password">Password</string>
+    <string name="sign_in_login">SIGN IN</string>
+    <string name="sign_in_reset_password">Reset Password</string>
+    <string name="sign_in_new_to_app_sign_up">New to App? SIGN UP</string>
+    <string name="sign_in_skip">SKIP</string>
+    <string name="sign_in_or_login_with">Or Login with</string>
+    <string name="sign_in_facebook">Facebook</string>
+    <string name="sign_in_google">Google</string>
+    <string name="sign_in_twitter">Twitter</string>
+
+    <!-- Activity SignUp -->
+    <string name="sign_up_mobile_number">Mobile number</string>
+    <string name="sign_up_name">Name</string>
+    <string name="sign_up_email">Email</string>
+    <string name="sign_up_password">Password</string>
+    <string name="sign_up_confirm_password">Confirm password</string>
+    <string name="sign_up_sign_up">SIGN UP</string>
+    <string name="sign_up_skip">SKIP</string>
+
+    <!-- ActivityOTP OTP Verify -->
+    <string name="otp_verify_otp">Please enter the OTP</string>
+    <string name="otp_verify_verify">NEXT</string>
+
+    <!-- Activity Forgot Password -->
+    <string name="forgot_password_mobile_number">Mobile number</string>
+    <string name="forgot_password_next">NEXT</string>
+
+    <!-- Activity Change Password -->
+    <string name="change_password_current_password">Current password</string>
+    <string name="change_password_new_password">New password</string>
+    <string name="change_password_confirm_new_password">Confirm new password</string>
+    <string name="change_password_save">SAVE</string>
+
+    <!-- Activity Dashboard -->
+    <string name="dashboard_navigation_drawer_open">Open</string>
+    <string name="dashboard_navigation_drawer_close">Close</string>
+    <string name="dashboard_account">Account</string>
+    <string name="dashboard_order_tracking">Order Tracking</string>
+    <string name="dashboard_loyalty_program">Loyalty Program</string>
+    <string name="dashboard_cart">Cart</string>
+
+    <!-- Fragment Address -->
+    <string name="my_address_cancel">CANCEL</string>
+    <string name="my_address_use_this_address">USE THIS ADDRESS</string>
+
+    <!-- Fragment PickUp -->
+    <string name="pick_up_type_pick_up_branch">Type pick up branch</string>
+    <string name="pick_up_continue">CONTINUE</string>
+
+    <!-- Fragment Delivery -->
+    <string name="delivery_house_or_office_number">House / office number</string>
+    <string name="delivery_street_number_name">Street number / name</string>
+    <string name="delivery_floor">Floor</string>
+    <string name="delivery_area_city">Area, City</string>
+    <string name="delivery_delivery_instruction">Delivery instruction</string>
+    <string name="delivery_choose_from_existing">CHOOSE FROM EXISTING</string>
+    <string name="delivery_use_this_address">USE THIS ADDRESS</string>
+
+    <!-- Fragment Modifier -->
+    <string name="modifiers_next">NEXT</string>
+    <string name="modifiers_done">DONE</string>
+
+    <!-- Fragment AddOn -->
+    <string name="addons_done">DONE</string>
+
+    <!-- Fragment Account -->
+    <string name="account_account_settings">Account Settings</string>
+    <string name="account_account">Account</string>
+    <string name="account_account_info">Account info</string>
+    <string name="account_change_password">Change password</string>
+    <string name="account_logout">Logout</string>
+    <string name="account_support">Support</string>
+    <string name="account_report_a_problem">Report a problem</string>
+    <string name="account_about">About</string>
+    <string name="account_terms_of_use">Terms of use</string>
+    <string name="account_rate_and_review">Rate and review</string>
+    <string name="account_order_history">Order History</string>
+    <string name="account_my_address">My Address</string>
+    <string name="account_order_tracking">Order Tracking</string>
+
+    <!-- Fragment Account Info -->
+    <string name="account_info_mobile_number">Mobile number</string>
+    <string name="account_info_name">Name</string>
+    <string name="account_info_email">e-mail</string>
+    <string name="account_info_save">SAVE</string>
+
+    <!-- Fragment Report Problem -->
+    <string name="report_problem">Please mention the problem that you are facing. We would do our best to improve</string>
+    <string name="report_problem_submit">SUBMIT</string>
+
+    <!-- Fragment Loyalty Program -->
+    <string name="loyalty_program_only_for_registered_user">Only for registered users</string>
+    <string name="loyalty_program_welcome_to_loyalty_program">Welcome to Sultan Burger Loyalty Program</string>
+
+    <!-- Fragment Promos -->
+    <string name="promos_type_to_select_branch">Type to select branch</string>
+    <string name="promos_note_promotions_are_available_only_for_registered_users">Note: Promotions are available only for registered users</string>
+
+    <!-- Fragment Promos -->
+    <string name="branch_choose_a_branch_to_check_what_promotions_are_available">Choose a branch to check what promotions are available</string>
+
+    <!-- Fragment AddOns -->
+    <string name="addons_additional_comments">Additional Comments</string>
+    <string name="addons_enter_your_comments">Enter your comments</string>
+
+    <!-- Activity Order Tracking -->
+    <string name="order_tracking_feedback">FEEDBACK</string>
+    <string name="order_tracking_order_history">ORDER HISTORY</string>
+
+    <!-- Activity Order Tracking MobileNumber -->
+    <string name="order_tracking_mobile_number_enter_mobile_number">Enter your mobile number to track your order</string>
+    <string name="order_tracking_mobile_number_mobile_number">Phone number</string>
+    <string name="order_tracking_mobile_number_order_tracking">ORDER TRACKING</string>
+
+</resources>

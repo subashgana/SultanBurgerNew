@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/navigation_view_height"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_10">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/orderTracking_recyclerView_orders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/orderTracking_linearLayout_bottomContainer"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+    <LinearLayout
+        android:id="@+id/orderTracking_linearLayout_bottomContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/margin_15"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <com.sultanburger.view.button.ButtonCustom
+            android:id="@+id/orderTracking_button_feedback"
+            style="@style/ButtonRed"
+            android:layout_width="fill_parent"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:text="@string/order_tracking_feedback"
+            app:fontModel="openSansRegular" />
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="match_parent" />
+
+        <com.sultanburger.view.button.ButtonCustom
+            android:id="@+id/orderTracking_button_orderHistory"
+            style="@style/ButtonRed"
+            android:layout_width="fill_parent"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:text="@string/order_tracking_order_history"
+            app:fontModel="openSansRegular" />
+    </LinearLayout>
+
+</RelativeLayout>

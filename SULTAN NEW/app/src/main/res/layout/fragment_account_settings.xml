@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:overScrollMode="never"
+    android:padding="@dimen/padding_10"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.sultanburger.view.textview.TextViewCustom
+                style="@style/TextView_Headline"
+                android:text="@string/account_account"
+                android:textColor="@color/yellow"
+                app:fontModel="openSansSemiBold" />
+
+            <RelativeLayout
+                android:id="@+id/accountSettings_relativeLayout_accountInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15">
+
+                <com.sultanburger.view.textview.TextViewCustom
+                    style="@style/TextView_SubHeading"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/account_account_info"
+                    android:textColor="@color/light_text_secondary"
+                    app:fontModel="openSansRegular" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_forward_arrow" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_5"
+                android:background="@color/colorAccent_40" />
+
+            <RelativeLayout
+                android:id="@+id/accountSettings_relativeLayout_changePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15">
+
+                <com.sultanburger.view.textview.TextViewCustom
+                    style="@style/TextView_SubHeading"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/account_change_password"
+                    android:textColor="@color/light_text_secondary"
+                    app:fontModel="openSansRegular" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_forward_arrow" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_5"
+                android:background="@color/colorAccent_40" />
+
+            <RelativeLayout
+                android:id="@+id/accountSettings_relativeLayout_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15">
+
+                <com.sultanburger.view.textview.TextViewCustom
+                    style="@style/TextView_SubHeading"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/account_logout"
+                    android:textColor="@color/light_text_secondary"
+                    app:fontModel="openSansRegular" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_forward_arrow" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_5"
+                android:background="@color/colorAccent_40" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.sultanburger.view.textview.TextViewCustom
+                style="@style/TextView_Headline"
+                android:text="@string/account_support"
+                android:textColor="@color/yellow"
+                app:fontModel="openSansSemiBold" />
+
+            <RelativeLayout
+                android:id="@+id/accountSettings_relativeLayout_reportProblem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15">
+
+                <com.sultanburger.view.textview.TextViewCustom
+                    style="@style/TextView_SubHeading"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/account_report_a_problem"
+                    android:textColor="@color/light_text_secondary"
+                    app:fontModel="openSansRegular" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_forward_arrow" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_5"
+                android:background="@color/colorAccent_40" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.sultanburger.view.textview.TextViewCustom
+                style="@style/TextView_Headline"
+                android:text="@string/account_about"
+                android:textColor="@color/yellow"
+                app:fontModel="openSansSemiBold" />
+
+            <RelativeLayout
+                android:id="@+id/accountSettings_relativeLayout_termsOfUse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15">
+
+                <com.sultanburger.view.textview.TextViewCustom
+                    style="@style/TextView_SubHeading"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/account_terms_of_use"
+                    android:textColor="@color/light_text_secondary"
+                    app:fontModel="openSansRegular" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_forward_arrow" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_5"
+                android:background="@color/colorAccent_40" />
+
+            <RelativeLayout
+                android:id="@+id/accountSettings_relativeLayout_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15">
+
+                <com.sultanburger.view.textview.TextViewCustom
+                    style="@style/TextView_SubHeading"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/account_about"
+                    android:textColor="@color/light_text_secondary"
+                    app:fontModel="openSansRegular" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_forward_arrow" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_5"
+                android:background="@color/colorAccent_40" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.sultanburger.view.textview.TextViewCustom
+                style="@style/TextView_Headline"
+                android:text="@string/account_rate_and_review"
+                android:textColor="@color/yellow"
+                app:fontModel="openSansSemiBold" />
+
+            <RelativeLayout
+                android:id="@+id/accountSettings_relativeLayout_rateAndReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15">
+
+                <com.sultanburger.view.textview.TextViewCustom
+                    style="@style/TextView_SubHeading"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/account_rate_and_review"
+                    android:textColor="@color/light_text_secondary"
+                    app:fontModel="openSansRegular" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_forward_arrow" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_5"
+                android:background="@color/colorAccent_40" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/navigation_view_height" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_navigation_view_account"
+        android:icon="@drawable/ic_account"
+        android:title="@string/dashboard_account" />
+
+    <item
+        android:id="@+id/bottom_navigation_view_order_tracking"
+        android:icon="@drawable/ic_order_tracking"
+        android:title="@string/dashboard_order_tracking" />
+
+    <item
+        android:id="@+id/bottom_navigation_view_loyalty_program"
+        android:icon="@drawable/ic_loyalty_program"
+        android:title="@string/dashboard_loyalty_program" />
+
+    <item
+        android:id="@+id/bottom_navigation_view_cart"
+        android:icon="@drawable/ic_cart"
+        android:title="@string/dashboard_cart" />
+</menu>
