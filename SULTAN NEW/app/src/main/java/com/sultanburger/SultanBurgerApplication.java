@@ -3,18 +3,31 @@ package com.sultanburger;
 import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
+import android.text.TextUtils;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import com.sultanburger.data.item.CartItem;
 import com.sultanburger.data.output.UserDetail;
 import com.sultanburger.utils.FileUtil;
+import com.sultanburger.utils.LruBitmapCache;
 import com.sultanburger.utils.Validator;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import static com.android.volley.VolleyLog.TAG;
 
 public class SultanBurgerApplication extends Application implements AppConstants {
 
@@ -24,7 +37,10 @@ public class SultanBurgerApplication extends Application implements AppConstants
     private UserDetail userDetail;
     private String selectedBranchId;
     private final Multimap<String, CartItem> cartItems;
+    private RequestQueue mRequestQueue;
 
+
+    private ImageLoader mImageLoader;
     public SultanBurgerApplication() {
         cartItems = ArrayListMultimap.create();
     }
@@ -43,6 +59,9 @@ public class SultanBurgerApplication extends Application implements AppConstants
         SultanBurgerApplication.context = this;
         MultiDex.install(context);
     }
+
+
+
 
     public UserDetail getUserDetail() {
         return userDetail;
@@ -92,5 +111,40 @@ public class SultanBurgerApplication extends Application implements AppConstants
         String imageFileName = getImageFileName();
 
         return new File(prescriptionDirectory, File.separator + imageFileName);
+    }
+
+
+    public RequestQueue getRequestQueue() {
+        if (mRequestQueue == null) {
+            mRequestQueue = Volley.newRequestQueue(context);
+        }
+
+        return mRequestQueue;
+    }
+
+    public ImageLoader getImageLoader() {
+        getRequestQueue();
+        if (mImageLoader == null) {
+            mImageLoader = new ImageLoader(this.mRequestQueue,
+                    new LruBitmapCache());
+        }
+        return this.mImageLoader;
+    }
+
+    public <T> void addToRequestQueue(Request<T> req, String tag) {
+        // set the default tag if tag is empty
+        req.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
+        getRequestQueue().add(req);
+    }
+
+    public <T> void addToRequestQueue(Request<T> req) {
+        req.setTag(TAG);
+        getRequestQueue().add(req);
+    }
+
+    public void cancelPendingRequests(Object tag) {
+        if (mRequestQueue != null) {
+            mRequestQueue.cancelAll(tag);
+        }
     }
 }

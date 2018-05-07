@@ -8,19 +8,24 @@ import com.sultanburger.utils.Validate;
 
 import java.util.List;
 
-public class ListMenuInput implements Validate {
+public class AddMenutToCartInput implements Validate {
 
     @Expose
     @SerializedName("branch_id")
-    String branch_id;
+    private String branchId;
+
 
     @Expose
     @SerializedName("order_type")
-     int order_type;
+    private int orderType;
 
     @Expose
     @SerializedName("user_address_id")
-     String user_address_id;
+    private String userAddressId;
+
+    public AddMenutToCartInput() {
+
+    }
 
     @Expose
     @SerializedName("modifiers")
@@ -29,25 +34,19 @@ public class ListMenuInput implements Validate {
 
     @Expose
     @SerializedName("addons")
-     List<Integer> addons;
+    private List<Integer> addons;
 
     @Expose
     @SerializedName("menu_item_id")
-     String menu_item_id;
-
-
-
-    public ListMenuInput() {
-
-    }
+    private String menuItemid;
 
 
     public String getMenuItemid() {
-        return menu_item_id;
+        return menuItemid;
     }
 
-    public void setMenuItemid(String menu_item_id) {
-        this.menu_item_id = menu_item_id;
+    public void setMenuItemid(String menuItemid) {
+        this.menuItemid = menuItemid;
     }
 
 
@@ -70,45 +69,31 @@ public class ListMenuInput implements Validate {
 
 
     public String getBranchId() {
-        return branch_id;
+        return branchId;
     }
 
-    public void setBranchId(String branch_id) {
-        this.branch_id = branch_id;
+    public void setBranchId(String branchId) {
+        this.branchId = branchId;
     }
 
-  /*  public String getMenuCategoryId() {
-        return menuCategoryId;
-    }
-
-    public void setMenuCategoryId(String menuCategoryId) {
-        this.menuCategoryId = menuCategoryId;
-    }*/
 
     public int getOrderType() {
-        return order_type;
+        return orderType;
     }
 
-    public void setOrderType(int order_type) {
-        this.order_type = order_type;
+    public void setOrderType(int orderType) {
+        this.orderType = orderType;
     }
 
     public String getUserAddressId() {
-        return user_address_id;
+        return userAddressId;
     }
 
-    public void setUserAddressId(String user_address_id) {
-        this.user_address_id = user_address_id;
+    public void setUserAddressId(String userAddressId) {
+        this.userAddressId = userAddressId;
     }
 
-  /*  public String getPage() {
-        return page;
-    }
 
-    public void setPage(String page) {
-        this.page = page;
-    }
-*/
     @Override
     public boolean isValid(Context context) {
         boolean retVal = true;

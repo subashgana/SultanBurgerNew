@@ -1,17 +1,31 @@
 package com.sultanburger;
 
 import android.annotation.SuppressLint;
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.WindowManager;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.android.gms.common.api.Response;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.common.collect.Iterables;
+import com.google.gson.Gson;
 import com.sultanburger.data.Location;
+import com.sultanburger.data.input.AddMenutToCartInput;
 import com.sultanburger.data.input.AddOnsInput;
+import com.sultanburger.data.input.AddToCartInput;
 import com.sultanburger.data.input.AddUserAddressInput;
 import com.sultanburger.data.input.ChangePasswordInput;
 import com.sultanburger.data.input.ChangeUserNameInput;
@@ -20,19 +34,23 @@ import com.sultanburger.data.input.ForgotPasswordInput;
 import com.sultanburger.data.input.GuestSignInInput;
 import com.sultanburger.data.input.ListCartProduct;
 import com.sultanburger.data.input.ListMenuInput;
+import com.sultanburger.data.input.ListMenuInputNew;
 import com.sultanburger.data.input.ListUserNearByBranchesInput;
 import com.sultanburger.data.input.ModifiersInput;
 import com.sultanburger.data.input.SignInInput;
 import com.sultanburger.data.input.SignUpInput;
 import com.sultanburger.data.input.SignUpOTPInput;
+import com.sultanburger.data.output.AddOns;
 import com.sultanburger.data.output.AddOnsOutput;
 import com.sultanburger.data.output.AddUserAddressOutput;
+import com.sultanburger.data.output.AddtoCartOutput;
 import com.sultanburger.data.output.AuthToken;
 import com.sultanburger.data.output.GuestSignInOutput;
 import com.sultanburger.data.output.ListCartOutput;
 import com.sultanburger.data.output.ListMenuOutput;
 import com.sultanburger.data.output.ListUserAddressOutput;
 import com.sultanburger.data.output.MenuCategoryOutput;
+import com.sultanburger.data.output.Modifiers;
 import com.sultanburger.data.output.ModifiersOutput;
 import com.sultanburger.data.output.MyOrdersOutput;
 import com.sultanburger.data.output.OTPOutput;
@@ -52,6 +70,17 @@ import com.sultanburger.utils.Logger;
 import com.sultanburger.utils.ToastUtil;
 import com.sultanburger.utils.Utils;
 import com.sultanburger.utils.Validator;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public abstract class AppBaseActivity extends PermissionActivity implements AppConstants {
 
@@ -208,6 +237,8 @@ public abstract class AppBaseActivity extends PermissionActivity implements AppC
                     getPreferenceHelper().setString(USER_NAME, username);
                     getPreferenceHelper().setString(PASSWORD, password);
                     getPreferenceHelper().setString(PREF_AUTH_TOKEN, authToken.getAuthToken());
+                    getPreferenceHelper().setString(PREF_AUTH_TOKEN, authToken.getAuthToken());
+                    Log.d("PREF_AUTH_TOKEN",authToken.getAuthToken());
                     getPreferenceHelper().setBoolean(PREF_IS_USER_SIGNED_IN, true);
                     getPreferenceHelper().setBoolean(PREF_IS_GUEST_USER, false);
 
@@ -565,12 +596,25 @@ public abstract class AppBaseActivity extends PermissionActivity implements AppC
     }
 
     public void getListMenu(String branchId, String menuCategoryId, int orderType, String page, final DataReceiver<ListMenuOutput> dataReceiver) {
-        ListMenuInput listMenuInput = new ListMenuInput();
+        ListMenuInputNew listMenuInput = new ListMenuInputNew();
         listMenuInput.setBranchId(branchId);
         listMenuInput.setMenuCategoryId(menuCategoryId);
         listMenuInput.setOrderType(orderType);
         listMenuInput.setUserAddressId(null);
         listMenuInput.setPage(page);
+
+        ObjectMapper mapperObj = new ObjectMapper();
+
+
+        try {
+            // get Employee object as a json string
+            String jsonStr = mapperObj.writeValueAsString(listMenuInput);
+            Log.d("jsonmessage",jsonStr);
+            System.out.println(jsonStr);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            // e.printStackTrace();
+        }
 
         RestHelper.sendPost(AppBaseActivity.this, URI_LIST_MENUS, listMenuInput, ListMenuOutput.class, new ResultReceiver<ListMenuOutput>() {
             @Override
@@ -591,16 +635,47 @@ public abstract class AppBaseActivity extends PermissionActivity implements AppC
         listCartProduct.setBranchId(branchId);
         listCartProduct.setOrderType(orderType);
         listCartProduct.setUserAddressId(useraddressId);
-
-        RestHelper.sendPost(AppBaseActivity.this, URI_LIST_MENUS, listCartProduct, ListCartOutput.class, new ResultReceiver<ListCartOutput>() {
+        RestHelper.sendPost(AppBaseActivity.this,URI_CART_PRODUCT_LIST, listCartProduct, ListCartOutput.class, new ResultReceiver<ListCartOutput>() {
             @Override
             public void onCompleted(Result<ListCartOutput> result) {
                 dataReceiver.receiveData(result.getData());
+
+                Log.d("result",result.getData()+"");
+
             }
 
             @Override
             public void onFailed(Exception exception) {
                 dataReceiver.receiveData(null);
+                ToastUtil.showToast(getApplicationContext(), exception.getMessage());
+            }
+        });
+    }
+
+    public void AddMenuItemToCart(String branchId, int orderType, String UserAddressId , String menuItemId, List<Integer> modifiers , List<Integer> addons,
+                                  final DataReceiver<AddtoCartOutput> dataReceiver) {
+
+        ListMenuInput listMenuInput = new ListMenuInput();
+        listMenuInput.setBranchId(branchId);
+        listMenuInput.setMenuItemid(menuItemId);
+        listMenuInput.setOrderType(orderType);
+        listMenuInput.setUserAddressId(UserAddressId);
+       /* listMenuInput.setModifiers(modifiers);
+        listMenuInput.setAddons(addons);*/
+
+        RestHelper.sendPost(AppBaseActivity.this,URI_ADD_MENUS_TO_CART, listMenuInput, AddtoCartOutput.class, new ResultReceiver<AddtoCartOutput>() {
+            @Override
+            public void onCompleted(Result<AddtoCartOutput> result) {
+                dataReceiver.receiveData(result.getData());
+                ToastUtil.showToast(getApplicationContext(),result.getData()+"");
+
+            }
+
+            @Override
+            public void onFailed(Exception exception) {
+                dataReceiver.receiveData(null);
+
+                Log.d("message",exception.getMessage());
                 ToastUtil.showToast(getApplicationContext(), exception.getMessage());
             }
         });

@@ -10,6 +10,40 @@ public class ListCartOutput
 
 {
 
+    @Expose
+    @SerializedName("cart_total_products")
+    private String cart_total_products;
+
+    @Expose
+    @SerializedName("user_order_id")
+    private String userorderid;
+
+    @Expose
+    @SerializedName("order_type")
+    private String orderType;
+
+    @Expose
+    @SerializedName("branch_id")
+    private String branchId;
+
+    @Expose
+    @SerializedName("user_address_id")
+    private String useraddressid;
+
+
+  /*  @Expose
+    @SerializedName("cart_product_details")
+    private List<ListMenu> menuLists;
+*/
+
+    @Expose
+    @SerializedName("payment_method_details")
+    private List<ListCartAllList> menuLists;
+
+    public ListCartOutput() {
+
+    }
+
 
     public String getCart_total_products() {
         return cart_total_products;
@@ -51,42 +85,13 @@ public class ListCartOutput
         this.useraddressid = useraddressid;
     }
 
-    public List<ListMenu> getMenuLists() {
+    public List<ListCartAllList> getMenuLists() {
         return menuLists;
     }
 
-    public void setMenuLists(List<ListMenu> menuLists) {
+
+    public void setMenuLists(List<ListCartAllList> menuLists) {
         this.menuLists = menuLists;
     }
 
-    @Expose
-    @SerializedName("cart_total_products")
-    private String cart_total_products;
-
-    @Expose
-    @SerializedName("user_order_id")
-    private String userorderid;
-
-    @Expose
-    @SerializedName("order_type")
-    private String orderType;
-
-    @Expose
-    @SerializedName("branch_id")
-    private String branchId;
-
-    @Expose
-    @SerializedName("user_address_id")
-    private String useraddressid;
-
-
-
-
-    @Expose
-    @SerializedName("cart_product_details")
-    private List<ListMenu> menuLists;
-
-    public ListCartOutput() {
-
-    }
 }

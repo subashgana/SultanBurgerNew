@@ -17,6 +17,17 @@ public class ListCartProduct implements Validate {
     private String branchId;
 
 
+    @Expose
+    @SerializedName("menu_item_id")
+    private String menuItemId;
+
+    public String getMenuItemId() {
+        return menuItemId;
+    }
+
+    public void setMenuItemId(String menuItemId) {
+        this.menuItemId = menuItemId;
+    }
 
     @Expose
     @SerializedName("order_type")

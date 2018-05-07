@@ -12,62 +12,72 @@ public class AddToCartInput implements Validate {
 
     @Expose
     @SerializedName("branch_id")
-    private String branchId;
+    String branch_id;
 
     @Expose
     @SerializedName("order_type")
-    private String orderType;
+    int order_type;
 
     @Expose
     @SerializedName("user_address_id")
-    private String userAddressId;
+    String user_address_id;
 
     @Expose
     @SerializedName("menu_item_id")
-    private String menuItemId;
+    String menu_item_id;
 
     @Expose
     @SerializedName("modifiers")
-    private List<Integer> modifiers;
+    List<Integer> modifiers;
 
     @Expose
     @SerializedName("addons")
     private List<Integer> addons;
 
+
+
     public AddToCartInput() {
 
     }
 
-    public String getBranchId() {
-        return branchId;
+
+    @Override
+    public boolean isValid(Context context) {
+        boolean retVal = false;
+
+        return retVal;
     }
 
-    public void setBranchId(String branchId) {
-        this.branchId = branchId;
+    public String getBranch_id() {
+        return branch_id;
     }
 
-    public String getOrderType() {
-        return orderType;
+    public void setBranch_id(String branch_id) {
+        this.branch_id = branch_id;
     }
 
-    public void setOrderType(String orderType) {
-        this.orderType = orderType;
+    public int getOrder_type() {
+        return order_type;
     }
 
-    public String getUserAddressId() {
-        return userAddressId;
+    public void setOrder_type(int order_type) {
+        this.order_type = order_type;
     }
 
-    public void setUserAddressId(String userAddressId) {
-        this.userAddressId = userAddressId;
+    public String getUser_address_id() {
+        return user_address_id;
     }
 
-    public String getMenuItemId() {
-        return menuItemId;
+    public void setUser_address_id(String user_address_id) {
+        this.user_address_id = user_address_id;
     }
 
-    public void setMenuItemId(String menuItemId) {
-        this.menuItemId = menuItemId;
+    public String getMenu_item_id() {
+        return menu_item_id;
+    }
+
+    public void setMenu_item_id(String menu_item_id) {
+        this.menu_item_id = menu_item_id;
     }
 
     public List<Integer> getModifiers() {
@@ -86,10 +96,8 @@ public class AddToCartInput implements Validate {
         this.addons = addons;
     }
 
-    @Override
-    public boolean isValid(Context context) {
-        boolean retVal = true;
 
-        return retVal;
-    }
+
+
+
 }
